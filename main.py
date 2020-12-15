@@ -1,10 +1,16 @@
 import algorithm
 import numpy as np
 import argparse
+import sys
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--test", help="Testing without gui", action="store_true")
 args = parser.parse_args()
+
+def main():
+	app = QApplication(sys.argv)
+	g = gui.GUI()
+	g.start(app)
 
 if args.test:
 	A = np.array([[10,2,0,0],[3,10,4,0],[0,1,7,5],[0,0,3,4]],dtype=float) 
@@ -26,19 +32,7 @@ Residual:
 		"""
 	)
 else:
-
+	import gui
+	from PyQt5.QtWidgets import QApplication
+	main()
 	pass
-
-class GUI(QWidget):
-
-	def __init__():
-		super().__init__()
-		self.init()
-	
-	def init(self):
-
-
-def main():
-
-
-
