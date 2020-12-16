@@ -20,14 +20,17 @@ def algo(a, b, c, d):
 def matrix_to_3list(arr):
 	m, n = np.shape(arr)
 	if m != n:
+		print('m != n')
 		return -1
 	for i in range(n):
 		for j in range(n):
 			if (i == j) or (i - 1 == j) or (i + 1 == j):
 				if arr[i][j] == 0:
+					print('arr[i][j] == 0')
 					return -1
 			else:
 				if arr[i][j] != 0:
+					print('arr[i][j] != 0')
 					return -1
 	a, b, c = [], [], []
 	for i in range(n):
